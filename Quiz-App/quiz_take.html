@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <h2>Complete the Quiz</h2>
+    <form method="POST">
+        {% for quiz in quizzes %}
+            <div class="quiz-card">
+                <p><strong>{{ loop.index }}. {{ quiz.question }}</strong></p>
+                {% for option in quiz.options %}
+                    <div style="margin: 10px 0;">
+                        <input type="radio" name="q_{{ quiz.id }}" value="{{ loop.index0 }}" id="q{{ quiz.id }}_{{ loop.index0 }}" required>
+                        <label for="q{{ quiz.id }}_{{ loop.index0 }}">{{ option }}</label>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endfor %}
+        <button type="submit" class="btn" style="width:100%; margin-top:20px;">Submit Answers</button>
+    </form>
+{% endblock %}
