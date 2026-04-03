@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <h2>Available Questions ({{ quizzes|length }})</h2>
+    {% for quiz in quizzes %}
+        <div class="quiz-card">
+            <strong>Q{{ loop.index }}: {{ quiz.question }}</strong>
+        </div>
+    {% else %}
+        <p style="text-align:center">No quizzes created yet. Start building!</p>
+    {% endfor %}
+    
+    {% if quizzes %}
+    <div style="text-align:center; margin-top:30px;">
+        <a href="{{ url_for('take_quiz') }}" class="btn">Take the Quiz Now</a>
+    </div>
+    {% endif %}
+{% endblock %}

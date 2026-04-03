@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <h2>Quiz Results</h2>
+    <div style="text-align: center; padding: 40px;">
+        <h1 style="font-size: 4rem; margin: 0;">{{ score }} / {{ total }}</h1>
+        <p style="font-size: 1.5rem;">Correct Answers</p>
+        
+        <div style="margin-top: 40px;">
+            <a href="{{ url_for('take_quiz') }}" class="btn">Try Again</a>
+            <a href="{{ url_for('index') }}" class="btn" style="background:rgba(255,255,255,0.1); margin-left:10px;">Go Home</a>
+        </div>
+    </div>
+{% endblock %}

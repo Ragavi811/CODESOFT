@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <h2>Build a New Question</h2>
+    <form method="POST">
+        <label>Question:</label>
+        <input type="text" name="question" placeholder="e.g. What is the capital of France?" required>
+        
+        <label>Option 1:</label>
+        <input type="text" name="option1" placeholder="Choice A" required>
+        <label>Option 2:</label>
+        <input type="text" name="option2" placeholder="Choice B" required>
+        <label>Option 3:</label>
+        <input type="text" name="option3" placeholder="Choice C" required>
+        <label>Option 4:</label>
+        <input type="text" name="option4" placeholder="Choice D" required>
+
+        <label>Correct Answer:</label>
+        <select name="correct" required>
+            <option value="" disabled selected>Select the right option</option>
+            <option value="0">Option 1</option>
+            <option value="1">Option 2</option>
+            <option value="2">Option 3</option>
+            <option value="3">Option 4</option>
+        </select>
+        
+        <button type="submit" class="btn" style="width:100%">Save Question</button>
+    </form>
+{% endblock %}

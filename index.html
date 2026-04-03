@@ -1,0 +1,9 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <h1>Welcome to QuizMaster</h1>
+    <p style="text-align: center; font-size: 1.2rem;">Challenge yourself or create custom tests in minutes.</p>
+    <div style="text-align: center; margin-top: 40px;">
+        <a href="{{ url_for('create') }}" class="btn">Create New Quiz</a>
+        <a href="{{ url_for('list_quizzes') }}" class="btn" style="background:transparent; border:1px solid white; margin-left:10px;">View Quizzes</a>
+    </div>
+{% endblock %}
