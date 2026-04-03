@@ -29,4 +29,4 @@ This project demonstrates **backend and frontend integration**, user interaction
 ## Setup & Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/Ragavi811/MEDICINEREMINDERAPPLICATION.git
+   git clone https://github.com/Ragavi811/CODSOFT.git
