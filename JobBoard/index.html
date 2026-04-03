@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HireHub Pro | Level 2 Task</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
+        .page { display: none; min-height: 100vh; }
+        .page.active { display: block; animation: slideUp 0.5s ease-out; }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .glass-nav { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); border-bottom: 1px solid #e2e8f0; }
+        .premium-card { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); border: 1px solid #e2e8f0; }
+        .premium-card:hover { transform: translateY(-8px); border-color: #3b82f6; box-shadow: 0 25px 50px -12px rgba(59, 130, 246, 0.15); }
+    </style>
+</head>
+<body class="bg-[#fcfdfe] text-slate-900">
+
+    <nav class="fixed top-0 w-full glass-nav z-50 px-6 md:px-20 py-4 flex justify-between items-center">
+        <div class="flex items-center gap-2 cursor-pointer" onclick="showPage('home')">
+            <div class="bg-blue-600 p-2 rounded-xl text-white shadow-lg shadow-blue-200">
+                <i data-lucide="zap" class="w-6 h-6"></i>
+            </div>
+            <span class="text-xl font-extrabold tracking-tighter uppercase italic">HireHub<span class="text-blue-600 font-black">Pro</span></span>
+        </div>
+        <div class="flex gap-4 md:gap-8 font-bold text-slate-500 items-center">
+            <button onclick="showPage('jobs')" class="hover:text-blue-600 transition hidden md:block">Browse Jobs</button>
+            <button onclick="showPage('dashboard')" class="bg-slate-900 text-white px-6 py-2.5 rounded-full hover:bg-blue-600 transition shadow-xl">Dashboard</button>
+        </div>
+    </nav>
+
+    <div id="home" class="page active pt-48 pb-20">
+        <div class="max-w-4xl mx-auto text-center px-6">
+            <div class="inline-flex items-center gap-2 bg-blue-50 text-blue-600 px-4 py-2 rounded-full text-xs font-black uppercase tracking-widest mb-8">
+                <i data-lucide="award" class="w-4 h-4"></i> Level 2 Task 1 Verified
+            </div>
+            <h1 class="text-6xl md:text-8xl font-black mb-8 leading-[1.05] tracking-tight">
+                Unlock your <br><span class="text-blue-600 underline decoration-blue-100 underline-offset-8 italic">true potential.</span>
+            </h1>
+            <p class="text-lg md:text-xl text-slate-500 mb-12 max-w-2xl mx-auto font-medium leading-relaxed">
+                A premium job ecosystem connecting elite developers with the world's most innovative tech companies.
+            </p>
+            <div class="flex flex-wrap justify-center gap-5">
+                <button onclick="showPage('jobs')" class="bg-blue-600 text-white px-12 py-5 rounded-3xl font-black text-xl shadow-2xl shadow-blue-100 hover:scale-105 transition active:scale-95">Explore Careers</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="jobs" class="page pt-32 px-6 pb-20">
+        <div class="max-w-5xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+                <div>
+                    <h2 class="text-4xl font-black tracking-tight">Current Openings</h2>
+                    <p class="text-slate-400 font-medium mt-2">Filter by Department, Location, or Salary</p>
+                </div>
+                <div class="flex gap-3">
+                    <span class="bg-white border px-4 py-2 rounded-xl text-sm font-bold shadow-sm cursor-pointer hover:bg-slate-50 transition">Remote</span>
+                    <span class="bg-white border px-4 py-2 rounded-xl text-sm font-bold shadow-sm cursor-pointer hover:bg-slate-50 transition">Engineering</span>
+                </div>
+            </div>
+
+            <div class="grid gap-6">
+                <div onclick="showPage('details')" class="premium-card bg-white p-8 rounded-[2.5rem] flex flex-col md:flex-row justify-between items-center cursor-pointer group">
+                    <div class="flex gap-6 items-center w-full">
+                        <div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 shadow-inner group-hover:scale-110 transition">
+                            <i data-lucide="database"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-black group-hover:text-blue-600 transition">Senior Backend Engineer</h3>
+                            <p class="text-slate-400 font-bold uppercase text-xs tracking-widest mt-1">Amazon • Seattle • <span class="text-blue-600">$180k - $220k</span></p>
+                        </div>
+                    </div>
+                    <button class="mt-6 md:mt-0 bg-slate-900 text-white px-10 py-4 rounded-2xl font-bold hover:bg-blue-600 transition">View Role</button>
+                </div>
+
+                <div onclick="showPage('details')" class="premium-card bg-white p-8 rounded-[2.5rem] flex flex-col md:flex-row justify-between items-center cursor-pointer group">
+                    <div class="flex gap-6 items-center w-full">
+                        <div class="w-16 h-16 bg-slate-50 rounded-2xl flex items-center justify-center text-slate-400 shadow-inner group-hover:scale-110 transition">
+                            <i data-lucide="layout"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-black group-hover:text-blue-600 transition">Full Stack Developer</h3>
+                            <p class="text-slate-400 font-bold uppercase text-xs tracking-widest mt-1">Stripe • Remote • <span class="text-blue-600">$165k - $210k</span></p>
+                        </div>
+                    </div>
+                    <button class="mt-6 md:mt-0 bg-slate-900 text-white px-10 py-4 rounded-2xl font-bold hover:bg-blue-600 transition">View Role</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="details" class="page pt-32 px-6 pb-20">
+        <div class="max-w-3xl mx-auto bg-white p-12 rounded-[4rem] shadow-[0_32px_64px_-15px_rgba(0,0,0,0.05)] border border-slate-100">
+            <button onclick="showPage('jobs')" class="text-blue-600 font-black mb-10 flex items-center gap-2 hover:-translate-x-2 transition uppercase text-xs tracking-widest">
+                <i data-lucide="arrow-left" class="w-4 h-4"></i> Back to search
+            </button>
+            <h2 class="text-5xl font-black mb-4 tracking-tighter leading-tight">Senior Backend Engineer</h2>
+            <div class="flex gap-4 mb-10">
+                <span class="bg-slate-100 px-4 py-1.5 rounded-full text-xs font-bold uppercase">Amazon</span>
+                <span class="bg-blue-50 text-blue-600 px-4 py-1.5 rounded-full text-xs font-bold uppercase">Full-Time</span>
+            </div>
+            
+            <div class="prose text-slate-500 font-medium mb-12 leading-relaxed">
+                <p>We are scaling our AWS infrastructure and need a brilliant backend mind to lead the charge. You will manage high-concurrency systems and shape the future of cloud computing.</p>
+            </div>
+
+            <form onsubmit="event.preventDefault(); alert('Application successful! Check your email.'); showPage('home');" class="space-y-5 pt-12 border-t border-slate-100">
+                <h4 class="text-sm font-black uppercase text-slate-400 tracking-widest mb-4 italic">Start your application</h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    <input type="text" placeholder="Full Name" required class="w-full px-6 py-4 rounded-2xl bg-slate-50 border-transparent focus:ring-2 ring-blue-600 outline-none font-bold transition">
+                    <input type="email" placeholder="Work Email" required class="w-full px-6 py-4 rounded-2xl bg-slate-50 border-transparent focus:ring-2 ring-blue-600 outline-none font-bold transition">
+                </div>
+                <button type="submit" class="w-full bg-blue-600 text-white py-6 rounded-3xl font-black text-2xl shadow-2xl shadow-blue-100 hover:bg-blue-700 hover:scale-[1.02] transition active:scale-95">Send Application</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="dashboard" class="page pt-32 px-6 pb-20">
+        <div class="max-w-5xl mx-auto">
+            <div class="bg-slate-900 rounded-[4rem] p-16 text-white shadow-2xl relative overflow-hidden">
+                <div class="relative z-10">
+                    <h2 class="text-5xl font-black mb-12 tracking-tight">Admin Console</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="bg-white/5 backdrop-blur-xl p-10 rounded-[3rem] border border-white/10 shadow-inner">
+                            <p class="text-blue-400 font-black uppercase text-xs tracking-widest mb-4 flex items-center gap-2"><i data-lucide="activity" class="w-4 h-4"></i> Active Roles</p>
+                            <p class="text-6xl font-black">32</p>
+                        </div>
+                        <div class="bg-white/5 backdrop-blur-xl p-10 rounded-[3rem] border border-white/10 shadow-inner">
+                            <p class="text-blue-400 font-black uppercase text-xs tracking-widest mb-4 flex items-center gap-2"><i data-lucide="users" class="w-4 h-4"></i> Applicants</p>
+                            <p class="text-6xl font-black">1.8k</p>
+                        </div>
+                        <button class="bg-blue-600 p-10 rounded-[3rem] font-black text-2xl shadow-2xl shadow-blue-500/20 hover:bg-blue-700 transition flex flex-col items-center justify-center gap-4">
+                           <i data-lucide="plus-circle" class="w-8 h-8"></i>
+                           Post Job
+                        </button>
+                    </div>
+                </div>
+                <div class="absolute -top-40 -right-40 w-96 h-96 bg-blue-600 rounded-full blur-[160px] opacity-20"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center py-20 text-slate-300 font-bold text-xs uppercase tracking-[0.4em]">
+        &copy; 2026 HireHub Professional Platform
+    </footer>
+
+    <script>
+        // Start UI Components
+        lucide.createIcons();
+
+        // Navigation Logic
+        function showPage(pageId) {
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            const target = document.getElementById(pageId);
+            if(target) {
+                target.classList.add('active');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+    </script>
+</body>
+</html>
